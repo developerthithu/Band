@@ -1,0 +1,372 @@
+/* Reset css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+/*
+1. vị trí
+2. kích thước
+3. màu sắc
+4. kiểu dáng
+*/
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+.clear{
+    clear:both;
+}
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.col{
+    float:left;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.col-third{
+    width: 31.33333%;
+}
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/*BEGIN:_PHAN__HEADER________________________________________________________________________________*/
+#header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    /*Thuộc tính z-index thiết lập thứ tự xếp chồng nhau của một thành phần vị trí.
+    chi su dung cung positon*/
+    z-index: 1; 
+    height: 46px;
+    background-color: black;
+}
+#header .search-btn{
+    float: right;
+}
+/**/
+#header #nav{
+    display: inline-block; /*Thuộc tính display xác định loại hiển thị của thành phần.*/
+}
+
+#header #nav, .subnav{
+    list-style: none; /* Bỏ dấu chấm danh sách list*/
+
+}
+/*Begin:_nav_____________________________________________________________*/
+#header #nav li {
+    position: relative; /* lấy thẻ nav làm gốc  tọa độ (thẻ cha) */
+}
+
+#nav > li{
+    display: inline-block;   /* inline: Trên một hàng - block: khối chỉ sử dụng ở li trong nav */
+}
+
+#nav > li > a{
+    color: white;  /* Chỉ sử dụng trực tiếp thẻ a trong trong nav , thẻ con không được kế thừa */ 
+    text-transform: uppercase; /* đổi chữ thường thành hoa chỉ sử dụng chữ ở thẻ con a trong li trong nav */
+}
+
+#nav li a{
+    text-decoration: none; /* bỏ gạch dưới chân danh sách chữ*/
+    line-height: 46px; /* căn giữa theo chiều dọc của chữ*/
+    padding: 0 24px; /* tăng thêm mép trái 24px (di chuyển chữ) */
+    display: block; /*để :hover kế thừa trên thẻ a*/
+}
+
+ #nav > li:hover > a{
+    background-color: #ccc; 
+    color: black;
+}
+/* Thay đổi kích cỡ cho font <--> hinh anh, ky hieu O MORE : \/  */
+#nav .nav-arrow-down{
+    font-size: 12px;
+}
+/*End:_nav_____________________________________________________________*/
+/*_______________
+------------------*/
+/*Begin:_subnav_____________________________________________________________*/
+#nav .subnav {
+    display: none; /* hiển thị danh sách menu con bị ẩn đi */
+    position: absolute; /* Vị trí thay đổi dựa trên gốc tọa độ */
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    min-width: 160px; /* Chiều rộng tối thiểu */
+}
+
+#nav li:hover .subnav{
+    display: block; /* Hiển thị danh sách menu con khi hover vào li nav lúc này nó sẽ ghi đè vào nav subnav*/
+}
+
+#nav .subnav a{
+    padding: 0 12px;
+    line-height: 38px;
+}
+#nav .subnav li:hover   a {
+    background-color: #ccc;
+    color: black;
+}
+/*End:_subnav_____________________________________________________________*/
+/*_______________
+------------------*/
+/*Begin:_button ben phai*/
+#header .search-btn{
+    font-size: 14px;
+    color: white;
+    line-height: 46px;
+    padding: 0 21px;
+    cursor: pointer;
+}
+#header .search-btn:hover{
+    background-color: red;
+}
+/*End:_button ben phai*/
+/*_________________
+/*END:_PHAN__HEADER________________________________________________________________________________*/
+/*_______________
+------------------*/
+
+/*BEGIN:_PHAN__SLIDER________________________________________________________________________________*/
+#slider{
+    position: relative;
+    margin-top: 46px; /* kéo ra */
+    padding-top: 50%; /* đệm thêm : chiều cao bằng 50% chiều ngang của chính nó*/
+    background: url('../imgs/slider/slider1.jpg') top center / cover no-repeat; /* su dung ../ de dan vao*/
+}
+#slider .text-content{
+    position: absolute;
+    bottom: 47px;
+    left: 50%;
+    transform: translateX(-50%);/* đưa 1 nửa khoảng chữ về trục X */
+    text-align: center;
+    color: white; 
+}
+#slider .text-heading{
+    font-weight: 500;
+    font-size: 24px;
+}
+#slider .text-description{
+    font-size: 14px;
+    margin-top: 25px;
+}
+/*END:_PHAN__SLIDER________________________________________________________________________________*/
+
+
+/*BEGIN:_PHAN__CONTENT________________________________________________________________________________*/
+#content{
+    height: 1000px;
+    background-color: #fff;
+}
+
+/*_____________________________________________________________________________________________________*/
+/*Begin: content-section*/
+
+#content .content-section{
+    width: 800px;
+    /*
+    */
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0 112px;
+    padding-left: 16px;
+    padding-right: 16px;
+   
+}
+#content .section-heading{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 4px; /* khoảng cách ký tự 4px */
+}
+#content .section-sub-heading{
+    font-size: 15px;
+    text-align: center;
+    font-style: italic; /* kiểu chữ in nghiêng*/
+    opacity: 60%; /* làm trong suốt chữ*/
+    margin-top: 25px; 
+}
+#content .about-text{
+    margin-top: 25px;
+    text-align: justify; /* căn đều hai bên */
+    line-height: 1.4; /* khoảng cách dòng */
+}
+#content .members-list{
+    margin-top: 48px;
+}
+#content .member-item{
+    float: left;
+    width: 33.33333%;
+    text-align: center;
+}
+#content .member-name{
+    font-size: 15px;
+}
+#content .member-img{
+    margin-top: 15px;
+    width: 154px;
+    border-radius: 15px;
+}
+/*End: content-section*/
+
+/*_________________________________________________________________________________________*/
+/*Begin: tour-section*/
+.tour-section{
+    background-color: black;
+}
+.text-white{
+    color:white;
+}
+/*Begin: tickets-list */
+.tickets-list{
+    background-color: white;
+    margin-top: 40px;
+}
+.tickets-list li{
+    color: #757575;
+    list-style-type: none;
+    padding: 11px 16px;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.sold-out{
+    background-color: #f44336;
+    color:white;
+    margin: 4px 16px;
+    padding: 3px 4px;
+
+}
+.quantity{
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    float: right;
+    color: white;
+    background-color: black;
+    margin-top: -4px; /**/
+}
+/*End: tickets-list */
+/*____________________
+----------------------*/
+/*Begin: places-list */
+.places-list{
+    margin-top: 32px;
+    margin-bottom: 48px;
+}
+
+.place-img{
+    width: 100% ;
+    display: block;
+}
+
+.place-img:hover{
+    opacity: 0.6;
+}
+.place-body{
+    padding: 16px;
+    background-color: #fff;
+    font-size: 15px;
+}
+.splace-heading{
+    font-size: 15px;
+    font-weight: 600;
+}
+.place-time{
+    margin-top: 15px;
+    color: #757575;
+}
+.place-desc{
+    margin-top: 15px;
+    line-height: 1.4;
+}
+.place-buy-btn{
+    color: #fff;
+    background-color: black;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+}
+.form-submit-btn:hover ,.place-buy-btn:hover{
+    color: black;
+    background-color: #ccc;
+}
+/*End: places-list */
+
+/*End: tour-section*/
+/*_________________________________________________________________________________________*/
+
+/*_________________________________________________________________________________________*/
+/*Begin: contact-content*/
+.contact-content{
+    margin-top: 48px;
+}
+.contact-info{
+    font-size: 18px;
+    line-height: 1.5;
+    margin-right: 105px;
+}
+.contact-info i[class*='ti-']{
+    width: 30px;
+    display: inline-block;
+}
+.form-control{
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.mt8{
+    margin-top: 8px;
+}
+.col-full{
+    width: 100%;
+}
+
+.form-submit-btn{
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 10px 16px;
+    float: right;
+    margin-top: 25px;
+    cursor: pointer;
+}
+/*End: contact-content*/
+/*_________________________________________________________________________________________*/
+
+/*_________________________________________________________________________________________*/
+/*Begin: map-section*/
+.map-section{
+    margin-top: 50px;
+}
+.map-section img{
+    width: 100%;
+}
+/*End: map-section */
+/*_________________________________________________________________________________________*/
+
+/*_________________________________________________________________________________________*/
+/*Begin: footer */
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+.socials-list a{
+    font-size: 24px;
+    color:rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+#footer .socials-list a:hover{
+    color:rgba(0, 0, 0, 0.4);
+}
+/*End: footer */
+/*_________________________________________________________________________________________*/
